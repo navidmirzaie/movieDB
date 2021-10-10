@@ -1,0 +1,77 @@
+@import 'movie.css';
+@import 'modal.css';
+
+:root {
+  --purple: #2D142C;
+  --pink: #c72c41;
+  --white: #FFFFFF;
+}
+
+html,body {
+  font-family: Helvetica, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--purple);
+  color: var(--pink);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Default UI */
+input[type='search'] {
+  padding: 15px;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: 1px solid #CCCCCC;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: var(--pink);
+  border-radius: 20px;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (min-width: 800px) {
+
+  button {
+    width: 150px;
+    margin-left: 10px;
+    margin-top: 0;
+    cursor: pointer;
+  }
+
+  .wrapper {
+    max-width: 800px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .search-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+}

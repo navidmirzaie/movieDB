@@ -7,7 +7,29 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="wrapper">
+      <header>
+        <h1>MovieDB</h1>
+      </header>
+      <main>
+        <div class="search-wrapper">
+          <input type="search" id="searchbar" placeholder="Search for movie" name="q" autofocus/>
+          <button id="search">Search</button>
+        </div>
+        <div class="movies-wrapper"></div>
+      </main>
+    </div>
+    <!-- START MODAL -->
+    <div class="modal-window">
+      <div class="modal-wrapper">
+        <a href="#" class="close">&times; close</a>
+        <div class="modal-content" tabindex="-1">
+
+        </div>
+      </div>      
+    </div>
+
+    <!-- END MODAL -->
     <script type="module" src="src/js/main.js"></script>
   </body>
 </html>

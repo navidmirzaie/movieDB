@@ -1,0 +1,151 @@
+.movies-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.movie {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 24px);  /* 50% - padding and margin */
+    margin: 5px 0 10px 5px;
+    padding: 8px;
+    background: #FFF;
+    border-radius: 5px;
+    box-shadow: 7px 7px 23px -4px rgba(0,0,0,1);
+    cursor: pointer;
+}
+
+.cover {
+    height: 100%;
+    flex: 1 1 auto;
+}
+
+.box-art {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.box-art--large {
+    width: 100px;
+}
+
+.title {
+    font-size: 12px;
+    flex-direction: column;
+    flex: 1 1 auto;
+    color: var(--pink);
+    padding: 0 10px 0 0;
+}
+
+.title--large {
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.title--large h3 {
+    margin-top: 0 !important;
+}
+
+.title h3 {
+    margin-top: 11px;
+    margin-bottom: 5px;
+}
+
+.plot {
+    color: #000;
+}
+
+.rating {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.rating--good {
+    background: green;
+}
+
+.rating--bad {
+    background: red;
+}
+
+.genre {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.genre li {
+    border-radius: 5px;
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+/* if there are more then 4 genres, genre 4 > n will be on next line and therefor add margin */
+.genre li:nth-child(n+4) {
+    margin-top: 5px;
+}
+
+.genre li:not(:last-child) {
+    margin-right: 10px;
+}
+
+.year {
+    color: #828282;
+}
+
+.additional-info {
+    display: flex;
+    margin-top: 20px;
+}
+
+.additional-info  li {
+    display: flex;
+}
+
+.additional-info li:first-child {
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.additional-info li .key {
+    flex: 1;
+    padding-right: 10px;
+}
+
+.additional-info li .value {
+    font-weight: normal;
+}
+
+.movie .detail-call-to-action .show-detail {
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+
+@media screen and (min-width: 800px) {
+    .movie {
+      width: calc(33% - 24px);
+    }
+    
+    .movie .title {
+      font-size: 16px;
+    }
+
+    .show-detail {
+        margin-left: 0;
+        margin: 10px 0 5px 0;
+        width: 100%;
+    }
+
+    .genre li:nth-child(n+4) {
+        margin-top: 0;
+    }
+  }
