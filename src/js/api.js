@@ -7,8 +7,8 @@ const TYPE          =  ['movie','series','episode'];
 /** 
 
 * function for searching movie
-@param {query} query - query for the movie, for example title
-@param {param} param - parameter that specifies how to search for the 
+@param {query} - for the movie, for example title
+@param {param} - parameter that specifies how to search for the 
                        movie s = Search i = Title
 *  for example if you want to search for movies in general: 
     http://www.omdbapi.com/?s=Inception&apikey=4ffb1f9c
@@ -31,6 +31,12 @@ export function getMovie(query, param) {
     return request;
 }
 
+/** 
+
+* function for filtering
+@param {collection} - collection of movies 
+@param {filterByType} - type of search we want Movie, Serie, Episode   
+**/
 export function filter(collection, filterByType) {
     return collection.filter((data) => {
         return data.Type === filterByType;

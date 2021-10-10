@@ -2,7 +2,6 @@
 
 import { filter, getMovie } from './api';
 
-import '../css/default.css';
 import Movie from './Movie';
 
 // MOVIE SELECTOR(S)
