@@ -1,7 +1,7 @@
 'use strict';
 
 const API_KEY       = `4ffb1f9c`;
-const URL_ENDPOINT  = `http://www.omdbapi.com/`;
+const URL_ENDPOINT  = `https://www.omdbapi.com/`;
 const TYPE          =  ['movie','series','episode'];
 
 /** 

@@ -1,7 +1,6 @@
 'use strict';
 
 import { filter, getMovie } from './api';
-
 import Movie from './Movie';
 
 // MOVIE SELECTOR(S)
