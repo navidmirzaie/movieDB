@@ -1,8 +1,5 @@
-'use strict';
-
-const API_KEY       = `4ffb1f9c`;
-const URL_ENDPOINT  = `https://www.omdbapi.com/`;
-const TYPE          =  ['movie','series','episode'];
+const API_KEY = `4ffb1f9c`;
+const URL_ENDPOINT = `https://www.omdbapi.com/`;
 
 /** 
 
@@ -17,18 +14,19 @@ const TYPE          =  ['movie','series','episode'];
      http://www.omdbapi.com/?i=imdbID&apikey=4ffb1f9c
 **/
 
-export function getMovie(query, param) {
-    
-    if(param === 'detail') {
-        param = 'i';
-    } else if(param === 'search') {
-        param = 's';
-    }
-    console.log(`${URL_ENDPOINT}?${param}=${query}&apikey=${API_KEY}`);
-    const request = fetch(`${URL_ENDPOINT}?${param}=${query}&apikey=${API_KEY}`)
-    .then(response => response.json())
+export function getData(query, param = "s") {
+  if (param === "detail") {
+    param = "i";
+  }
 
-    return request;
+  //todo: remove console.log
+  console.log(`${URL_ENDPOINT}?${param}=${query}&apikey=${API_KEY}`);
+
+  const request = fetch(
+    `${URL_ENDPOINT}?${param}=${query}&apikey=${API_KEY}`
+  ).then((response) => response.json());
+
+  return request;
 }
 
 /** 
@@ -37,8 +35,8 @@ export function getMovie(query, param) {
 @param {collection} - collection of movies 
 @param {filterByType} - type of search we want Movie, Serie, Episode   
 **/
-export function filter(collection, filterByType) {
-    return collection.filter((data) => {
-        return data.Type === filterByType;
-    })
+export function filter(collection, filterByType = "movie") {
+  return collection.filter((data) => {
+    return data.Type === filterByType;
+  });
 }
