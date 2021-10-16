@@ -14,6 +14,9 @@ const SEARCH_BUTTON = document.querySelector("#search");
 const MODAL_WINDOW = document.querySelector(".modal-window");
 const MODAL_CONTENT = document.querySelector(".modal-window .modal-content");
 const CLOSE_MODAL_BUTTON = document.querySelector(".modal-window .close");
+const SELECT_FILTERS = document.querySelector(".filters");
+
+let selectedFilter;
 
 function initApp() {
   //bind events
@@ -21,6 +24,7 @@ function initApp() {
   SEARCH_BAR.addEventListener("keyup", searchByEnter);
   MODAL_CONTENT.addEventListener("keyup", closeModalByEscape);
   CLOSE_MODAL_BUTTON.addEventListener("click", closeModal);
+  SELECT_FILTERS.addEventListener("change", setFilter);
 }
 
 function searchByEnter(event) {
@@ -48,6 +52,13 @@ function closeModal() {
   MODAL_WINDOW.classList.remove("open-modal");
 }
 
+function setFilter(event) {
+  event.preventDefault();
+  const currentFilter = event.currentTarget.value;
+  selectedFilter = currentFilter;
+  search(event);
+}
+
 async function search(event) {
   event.preventDefault();
   let query = SEARCH_BAR.value;
@@ -61,12 +72,12 @@ async function search(event) {
   }
 }
 
-function renderList(list) {
+function renderList(collection) {
   let html = ``;
   let movie = null;
 
   //show only movies
-  const movies = filter(list, "movie");
+  const movies = filter(collection, selectedFilter);
 
   for (let { imdbID, Title, Year, Poster } of movies) {
     movie = new Movie(imdbID, Title, Year, Poster);
