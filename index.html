@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OMDB Movie Database</title>
-    <link href="/src/css/default.css" rel="stylesheet" type="text/css">
+    <link href="/src/css/default.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <div class="wrapper">
@@ -14,9 +14,19 @@
       </header>
       <main>
         <div class="search-wrapper">
-          <input type="search" id="searchbar" placeholder="Search for movie" name="q" autofocus/>
+          <input
+            type="search"
+            id="searchbar"
+            placeholder="Search for movie"
+            name="q"
+            autofocus
+          />
           <button id="search">Search</button>
         </div>
+        <select class="filters" name="filter">
+          <option selected value="movies">Movies</option>
+          <option value="series">Series</option>
+        </select>
         <div class="movies-wrapper"></div>
       </main>
     </div>
@@ -24,10 +34,8 @@
     <div class="modal-window">
       <div class="modal-wrapper">
         <a href="#" class="close">&times; close</a>
-        <div class="modal-content" tabindex="-1">
-
-        </div>
-      </div>      
+        <div class="modal-content" tabindex="-1"></div>
+      </div>
     </div>
 
     <!-- END MODAL -->

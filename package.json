@@ -1,12 +1,14 @@
 {
-  "name": "moviedb",
+  "name": "moviedb-v20",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --host 192.168.1.77",
+    "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
   "devDependencies": {
     "vite": "^2.6.0"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
