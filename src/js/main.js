@@ -1,5 +1,3 @@
-"use strict";
-
 import { filter, getData } from "./api";
 import Movie from "./Movie";
 
