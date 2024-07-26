@@ -10,16 +10,15 @@ const URL_ENDPOINT = `https://www.omdbapi.com/`;
      http://www.omdbapi.com/?i=imdbID&apikey=4ffb1f9c
 **/
 
-export function getData(query, param = "s") {
-  if (param === "detail") {
-    param = "i";
-  }
+export async function getMovies(query, param = "s") {
+  if (param === "detail") param = "i";
 
-  const request = fetch(
-    `${URL_ENDPOINT}?${param}=${query}&apikey=${API_KEY}`
-  ).then((response) => response.json());
+  const request = await fetch(
+    `${URL_ENDPOINT}?${param}=${query}&apikey=${API_KEY}`,
+  );
+  const response = await request.json();
 
-  return request;
+  return response;
 }
 
 /** 

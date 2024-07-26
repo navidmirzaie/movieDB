@@ -1,4 +1,4 @@
-import { filter, getData } from "./api";
+import { filter, getMovies } from "./api";
 import Movie from "./Movie";
 
 // MOVIE SELECTOR(S)
@@ -61,7 +61,7 @@ async function search(event) {
   event.preventDefault();
   let query = SEARCH_BAR.value;
 
-  const results = await getData(query);
+  const results = await getMovies(query);
 
   try {
     renderList(results.Search);
@@ -102,7 +102,7 @@ async function getDetails() {
 }
 
 async function showByImdbId(imdbID) {
-  const request = await getData(imdbID, "detail");
+  const request = await getMovies(imdbID, "detail");
   const movie = new Movie(
     request.imdbID,
     request.Title,
@@ -113,7 +113,7 @@ async function showByImdbId(imdbID) {
     request.Genre,
     request.Director,
     request.Actors,
-    request.imdbRating
+    request.imdbRating,
   );
   //render details movie in Modal
   MODAL_CONTENT.innerHTML = movie.renderDetails();
